@@ -1,15 +1,27 @@
+(setq package-list '(solarized-theme
+                     smooth-scrolling
+                     yasnippet
+                     smartparens
+                     multiple-cursors))
+
 (require 'package)
 
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
 
+;; activate all the packages (in particular autoloads)
 (package-initialize)
 
-(when (not package-archive-contents)
+;; fetch the list of packages available
+(unless package-archive-contents
   (package-refresh-contents))
 
+;; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
 
-(require 'dash) ;; required for solarized theme
+(require 'solarized-theme)
 (load-theme 'solarized-dark t)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -53,3 +65,4 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-m") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)

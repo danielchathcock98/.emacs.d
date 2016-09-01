@@ -1,6 +1,7 @@
 # Directories that contain emacs packages themselves
 auto-save-list/
 elpa/
+ido.last
 
 # Created by https://www.gitignore.io/api/emacs,linux,elisp
 
