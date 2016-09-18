@@ -2,7 +2,8 @@
                      smooth-scrolling
                      yasnippet
                      smartparens
-                     multiple-cursors))
+                     multiple-cursors
+                     markdown-mode))
 
 (require 'package)
 
@@ -66,3 +67,9 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-m") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+
+
+
+;; allows for the markdown-mode major mode
+(require 'markdown-mode)
+

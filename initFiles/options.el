@@ -48,6 +48,7 @@
 ;; define custom java indentations
 (defun java-indentations ()
   (c-set-offset 'inline-open '0)
+  (c-set-offset 'case-label '0)
   )
 
 ;; set this in all c-based programming modes

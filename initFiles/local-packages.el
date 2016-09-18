@@ -1,6 +1,6 @@
 ;; use whitespace mode
 (require 'whitespace)
-(setq whitespace-line-column 120 ;; limit line length
+(setq whitespace-line-column 80 ;; limit line length
       whitespace-style '(face lines-tail))
 (add-hook 'prog-mode-hook 'whitespace-mode)
 

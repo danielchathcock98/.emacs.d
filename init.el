@@ -2,3 +2,4 @@
 (load "~/.emacs.d/initFiles/local-packages.el")
 (load "~/.emacs.d/initFiles/functions.el")
 (load "~/.emacs.d/initFiles/options.el")
+(put 'upcase-region 'disabled nil)
