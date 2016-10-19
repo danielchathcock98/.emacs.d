@@ -3,7 +3,9 @@
                      yasnippet
                      smartparens
                      multiple-cursors
-                     markdown-mode))
+                     markdown-mode
+                     smart-compile
+                     company))
 
 (require 'package)
 
@@ -73,3 +75,14 @@
 ;; allows for the markdown-mode major mode
 (require 'markdown-mode)
 
+
+
+;; allows me to test compile java directly from emacs
+(require 'smart-compile)
+(global-set-key (kbd "C-c C-x") 'smart-compile)
+
+
+
+;; AUTO COMPLETION
+(require 'company)
+(global-company-mode t)
