@@ -4,6 +4,8 @@
 (setq mc/cmds-to-run-for-all
       '(
         c-electric-paren
+        c-electric-semi&comma
+        mouse-set-region
         subword-left
         subword-right
         upcase-region
@@ -11,4 +13,6 @@
 
 (setq mc/cmds-to-run-once
       '(
+        ido-find-file
+        overwrite-mode
         ))

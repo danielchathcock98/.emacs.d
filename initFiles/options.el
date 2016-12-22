@@ -1,3 +1,9 @@
+;; C-h b (or M-x describe-bindings) will show all commands for a key combination
+;; C-h f (or M-x describe-function) will show the key bindings for a command
+
+(global-set-key (kbd "C-h b") 'describe-key)
+(global-set-key (kbd "C-h f") 'describe-function)
+
 (tool-bar-mode -1)
 
 ;; use Shift+arrow_keys to move cursor around split panes
@@ -38,7 +44,7 @@
 (show-paren-mode t)
 (delete-selection-mode t)
 
-;; use C-c C-o to check what type of indentation something is
+;; use C-c C-o (M-x s-set-offset) to check what type of indentation something is
 ;; define custom c indentations
 (defun c-indentations ()
   (c-set-offset 'case-label '+)
@@ -57,12 +63,7 @@
 (add-hook 'c-mode-common-hook 'subword-mode)
 (add-hook 'java-mode-hook 'subword-mode)
 (add-hook 'python-mode-hook 'subword-mode)
-(add-hook 'html-mode-hook
+(add-hook 'css-mode-hook
           (lambda ()
-            ;; Default indentation is usually 2 spaces, changing to 4.
-            (set (make-local-variable 'sgml-basic-offset) 4)))
-(add-hook 'sgml-mode-hook
-          (lambda ()
-            ;; Default indentation to 2, but let SGML mode guess, too.
-            (set (make-local-variable 'sgml-basic-offset) 2)
-            (sgml-guess-indent)))
+            (setq c-basic-offset 2)))
+
